@@ -1,0 +1,111 @@
+* {
+    /* border: 1px solid red; */
+}
+
+/* .board {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid black;
+    border-radius: 5px;
+    gap: 2px;
+    padding: 2px;
+    background-color: yellow;
+    
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 2rem;
+    border: 1px solid grey;
+    background: lightyellow;
+    cursor: pointer;
+} */
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./images/space.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Orbitron', sans-serif; /* Use a futuristic font like Orbitron */
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* Adjust size as needed */
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+}
+
+button.cell {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: 2px solid #00ffcc;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.6), inset 0 0 10px rgba(0, 255, 204, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+button.cell:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 204, 0.8), inset 0 0 15px rgba(255, 0, 204, 0.6);
+    transform: scale(1.1);
+}
+
+.messages {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #ff33cc;
+}
+
+.reset {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff33cc;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 204, 0.7), inset 0 0 5px rgba(255, 0, 204, 0.5);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.reset:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 204, 1), inset 0 0 10px rgba(255, 255, 204, 0.8);
+    transform: scale(1.1);
+    border-color: #ffff66;
+}
+
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+    }
+    20%, 24%, 55% {
+        opacity: 0;
+    }
+}
+
+.messages {
+    animation: flicker 1.5s infinite alternate;
+    font-size: 24px;
+    color: #ff33cc;
+}
